@@ -4,15 +4,19 @@ export default class MistInsights extends React.Component {
         var token = this.props.widget.configuration.token || this.props.toolbox.getManager()._data.auth.token,
             uri = this.props.widget.configuration.token && this.props.widget.configuration.uri || '',
             authHeader = this.props.widget.configuration.token && 'Authorization' || 'authentication-token',
-            tenant = this.props.toolbox.getManager()._data.tenants.selected || '';
+            tenant = this.props.toolbox.getManager()._data.tenants.selected || '',
+            deploymentId = this.props.toolbox._Context.context.deploymentId,
+            wclUri = uri + '/elements/bundled/bower_components/webcomponentsjs/webcomponents-lite.js',
+            insightsUri = uri + '/elements/bundled/bower_components/mist-insights/mist-insights.html';
 
         return (
             <div id="insights">
-                <script src="https://dogfood.ops.mist.io/elements/bundled/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-                <link rel="import" href="https://dogfood.ops.mist.io/elements/bundled/bower_components/mist-insights/mist-insights.html" />
+                <script src={wclUri}></script>
+                <link rel="import" href={insightsUri} />
                 <mist-insights
                     class="cloudify"
                     stack-term="deployment"
+                    stack-name={deploymentId}
                     uri={uri}
                     token={token}
                     auth-header={authHeader}
