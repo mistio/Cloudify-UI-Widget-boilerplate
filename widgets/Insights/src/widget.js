@@ -6,8 +6,8 @@ export default class MistInsights extends React.Component {
             authHeader = this.props.widget.configuration.token && 'Authorization' || 'authentication-token',
             tenant = this.props.toolbox.getManager()._data.tenants.selected || '',
             deploymentId = this.props.toolbox._Context.context.deploymentId,
-            wclUri = uri + '/elements/bundled/bower_components/webcomponentsjs/webcomponents-lite.js',
-            insightsUri = uri + '/elements/bundled/bower_components/mist-insights/mist-insights.html';
+            wclUri = 'https://mist.io/elements/bundled/bower_components/webcomponentsjs/webcomponents-lite.js',
+            insightsUri = 'https://mist.io/elements/bundled/bower_components/mist-insights/mist-insights.html';
 
         return (
             <div id="insights">
@@ -30,7 +30,7 @@ Stage.defineWidget({
     name: 'Insights',
     description: 'Insights',
     initialWidth: 12,
-    initialHeight: 120,
+    initialHeight: 60,
     color: 'yellow',
     isReact: true,
     hasTemplate: false,
