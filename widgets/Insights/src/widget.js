@@ -6,8 +6,8 @@ export default class MistInsights extends React.Component {
             authHeader = this.props.widget.configuration.token && 'Authorization' || 'authentication-token',
             tenant = this.props.toolbox.getManager()._data.tenants.selected || '',
             deploymentId = this.props.toolbox._Context.context.deploymentId,
-            wclUri = 'https://mist.io/elements/bundled/bower_components/webcomponentsjs/webcomponents-lite.js',
-            insightsUri = 'https://mist.io/elements/bundled/bower_components/mist-insights/mist-insights.html';
+            wclUri = uri + '/elements/bundled/bower_components/webcomponentsjs/webcomponents-lite.js',
+            insightsUri = uri + '/elements/bundled/bower_components/mist-insights/mist-insights.html';
 
         return (
             <div id="insights">
