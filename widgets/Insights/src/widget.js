@@ -34,6 +34,7 @@ Stage.defineWidget({
     color: 'yellow',
     isReact: true,
     hasTemplate: false,
+    permission: 'widget_custom_admin',
     initialConfiguration: [
         {id: "token", name: "Mist.io token", default: '', type: Stage.Basic.GenericField.STRING_TYPE},
         {id: "uri", name: "Mist.io base URI", default: 'https://mist.io', type: Stage.Basic.GenericField.STRING_TYPE},
